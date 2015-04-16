@@ -7,3 +7,4 @@ test-built/*
 .idea
 docs/*.html
 docs/assets/bundle.js
+lib/.module-cache

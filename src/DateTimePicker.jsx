@@ -1,12 +1,10 @@
-var DateTimePicker, DateTimePickerDate, DateTimePickerTime, Glyphicon, React;
+var DateTimePicker, DateTimePickerDate, DateTimePickerTime, React;
 
 React = require('react/addons');
 
 DateTimePickerDate = require('./DateTimePickerDate');
 
 DateTimePickerTime = require('./DateTimePickerTime');
-
-Glyphicon = require('react-bootstrap').Glyphicon;
 
 DateTimePicker = React.createClass({
   propTypes: {
@@ -79,6 +77,13 @@ DateTimePicker = React.createClass({
     }
   },
   render: function() {
+    var icon;
+    if (this.props.showTimePicker) {
+      icon = <span className="glyphicon glyphicon-calendar"></span>;
+    } else {
+      icon = <span className="glyphicon glyphicon-time"></span>;
+    }
+
     return (
       <div className={React.addons.classSet(this.props.widgetClasses)} style={this.props.widgetStyle}>
 
@@ -87,7 +92,9 @@ DateTimePicker = React.createClass({
           {this.renderDatePicker()}
 
           <li>
-            <a className="btn picker-switch" style={{width:'100%'}} onClick={this.props.togglePicker}><Glyphicon glyph={this.props.showTimePicker ? 'calendar' : 'time'} /></a>
+            <a className="btn picker-switch" style={{width:'100%'}} onClick={this.props.togglePicker}>
+              {icon}
+            </a>
           </li>
 
           {this.renderTimePicker()}

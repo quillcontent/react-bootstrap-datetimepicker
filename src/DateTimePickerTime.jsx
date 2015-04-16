@@ -1,4 +1,4 @@
-var DateTimePickerHours, DateTimePickerMinutes, DateTimePickerTime, Glyphicon, React;
+var DateTimePickerHours, DateTimePickerMinutes, DateTimePickerTime, React;
 
 React = require('react');
 
@@ -6,7 +6,6 @@ DateTimePickerMinutes = require('./DateTimePickerMinutes');
 
 DateTimePickerHours = require('./DateTimePickerHours');
 
-Glyphicon = require('react-bootstrap').Glyphicon;
 
 DateTimePickerTime = React.createClass({
   propTypes: {
@@ -63,11 +62,16 @@ DateTimePickerTime = React.createClass({
         <table className="table-condensed">
           <tbody>
             <tr>
-              <td><a className="btn" onClick={this.props.addHour}><Glyphicon glyph="chevron-up" /></a></td>
+              <td><a className="btn" onClick={this.props.addHour}>
+                <span className="glyphicon glyphicon-chevron-up"></span>
+                </a></td>
+
 
               <td className="separator"></td>
 
-              <td><a className="btn" onClick={this.props.addMinute}><Glyphicon glyph="chevron-up" /></a></td>
+              <td><a className="btn" onClick={this.props.addMinute}>
+                <span className="glyphicon glyphicon-chevron-up"></span>
+              </a></td>
 
               <td className="separator"></td>
             </tr>
@@ -85,11 +89,15 @@ DateTimePickerTime = React.createClass({
             </tr>
 
             <tr>
-              <td><a className="btn" onClick={this.props.subtractHour}><Glyphicon glyph="chevron-down" /></a></td>
+              <td><a className="btn" onClick={this.props.subtractHour}>
+                <span className="glyphicon glyphicon-chevron-down"></span>
+              </a></td>
 
               <td className="separator"></td>
 
-              <td><a className="btn" onClick={this.props.subtractMinute}><Glyphicon glyph="chevron-down" /></a></td>
+              <td><a className="btn" onClick={this.props.subtractMinute}>
+                <span className="glyphicon glyphicon-chevron-down"></span>
+              </a></td>
 
               <td className="separator"></td>
             </tr>

@@ -1,4 +1,4 @@
-var DateTimeField, DateTimePicker, Glyphicon, React, moment;
+var DateTimeField, DateTimePicker, React, moment;
 
 React = require('react');
 
@@ -6,7 +6,6 @@ DateTimePicker = require('./DateTimePicker');
 
 moment = require('moment');
 
-Glyphicon = require('react-bootstrap').Glyphicon;
 
 DateTimeField = React.createClass({
   propTypes: {
@@ -286,7 +285,9 @@ DateTimeField = React.createClass({
             />
             <div className="input-group date" ref="datetimepicker">
               <input type="text" className="form-control" onClick={this.onClick} onChange={this.onChange} value={this.state.selectedDate.format(this.props.inputFormat)} />
-              <span className="input-group-addon" onClick={this.onClick} onBlur={this.onBlur} ref="dtpbutton"><Glyphicon glyph="calendar" /></span>
+              <span className="input-group-addon" onClick={this.onClick} onBlur={this.onBlur} ref="dtpbutton">
+                <span className="glyphicon glyphicon-calendar"></span>
+              </span>
             </div>
           </div>
     );
